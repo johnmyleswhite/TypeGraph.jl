@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Vega Examples</title/>
+    <script src="http://johnmyleswhite.com/typegraph/vega/examples/lib/d3.v3.min.js"></script>
+    <script src="http://johnmyleswhite.com/typegraph/vega/examples/lib/d3.geo.projection.min.js"></script>
+    <script src="http://johnmyleswhite.com/typegraph/vega/examples/lib/d3.layout.cloud.js"></script>
+    <script src="http://johnmyleswhite.com/typegraph/vega/examples/lib/specs.js"></script>
+    <script src="http://johnmyleswhite.com/typegraph/vega/vega.js"></script>
+    <style>
+* { font-family: Helvetica Neue, Arial, sans-serif; font-size: 14px; }
+#ctrl { margin-bottom: 1em; }
+    </style>
+  </head>
+  <body>
+    <div id="vis" style="text-align: center"></div>
+<script type="text/javascript">
+parse("http://johnmyleswhite.com/typegraph/specs/julia.json");
+
+// parse a spec and create a visualization view
+function parse(spec) {
+  vg.parse.spec(spec, function(chart) {
+    self.view = chart({el:"#vis"}).update();
+  });
+}
+</script>
+  </body>
+</html>
